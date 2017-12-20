@@ -272,17 +272,18 @@ static CGFloat kDefaultScale = 0.5;
     
     //Hide Keyboard
     if (![self isIpad]) {
-        
+        NSBundle* bundle = [NSBundle bundleForClass:[ZSSRichTextEditor class]];
+     
         // Toolbar holder used to crop and position toolbar
         UIView *toolbarCropper = [[UIView alloc] initWithFrame:CGRectMake(self.view.frame.size.width-44, 0, 44, 44)];
         toolbarCropper.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
         toolbarCropper.clipsToBounds = YES;
         
         // Use a toolbar so that we can tint
-        UIToolbar *keyboardToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(-7, -1, 44, 44)];
+        UIToolbar *keyboardToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(-8, -1, 88, 44)];
         [toolbarCropper addSubview:keyboardToolbar];
         
-        self.keyboardItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ZSSkeyboard.png"] style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard)];
+        self.keyboardItem = [[ZSSBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ZSSkeyboard.png" inBundle:bundle compatibleWithTraitCollection:nil] style:UIBarButtonItemStylePlain target:self action:@selector(dismissKeyboard)];
         keyboardToolbar.items = @[self.keyboardItem];
         [self.toolbarHolder addSubview:toolbarCropper];
         
@@ -886,7 +887,7 @@ static CGFloat kDefaultScale = 0.5;
     }
     
     // get the width before we add custom buttons
-    CGFloat toolbarWidth = items.count == 0 ? 0.0f : (CGFloat)(items.count * 39) - 10;
+    CGFloat toolbarWidth = items.count == 0 ? 0.0f : (CGFloat)(items.count * 39);
     
     if(self.customBarButtonItems != nil)
     {
