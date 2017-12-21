@@ -1157,7 +1157,7 @@ static CGFloat kDefaultScale = 0.5;
     [self.editorView stringByEvaluatingJavaScriptFromString:@"zss_editor.prepareInsert();"];
     
     //Call picker
-    ZSSFontsViewController *fontPicker = [ZSSFontsViewController cancelableFontPickerViewControllerWithFontFamily:ZSSFontFamilyDefault];
+    ZSSFontsViewController *fontPicker = [ZSSFontsViewController cancelableFontPickerViewControllerWithFontFamily:ZSSFontFamilySystem];
     fontPicker.delegate = self;
     [self.navigationController pushViewController:fontPicker animated:YES];
     
@@ -1168,7 +1168,11 @@ static CGFloat kDefaultScale = 0.5;
     NSString *fontFamilyString;
     
     switch (fontFamily) {
-        case ZSSFontFamilyDefault:
+        case ZSSFontFamilySystem:
+            fontFamilyString = @"-apple-system";
+            break;
+
+        case ZSSFontFamilyArial:
             fontFamilyString = @"Arial, Helvetica, sans-serif";
             break;
         

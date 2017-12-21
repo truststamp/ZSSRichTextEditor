@@ -9,14 +9,15 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(int16_t, ZSSFontFamily) {
-    
-    ZSSFontFamilyDefault = 0,
-    ZSSFontFamilyTrebuchet = 1,
-    ZSSFontFamilyVerdana = 2,
-    ZSSFontFamilyGeorgia = 3,
-    ZSSFontFamilyPalatino = 4,
-    ZSSFontFamilyTimesNew = 5,
-    ZSSFontFamilyCourierNew = 6,
+
+    ZSSFontFamilySystem = 0,
+    ZSSFontFamilyArial = 1,
+    ZSSFontFamilyTrebuchet = 2,
+    ZSSFontFamilyVerdana = 3,
+    ZSSFontFamilyGeorgia = 4,
+    ZSSFontFamilyPalatino = 5,
+    ZSSFontFamilyTimesNew = 6,
+    ZSSFontFamilyCourierNew = 7,
     
     
 };

@@ -101,36 +101,41 @@
     
     switch (indexPath.row) {
         case 0:
-        cell.textLabel.text = @"Default";
-        cell.textLabel.font = [UIFont fontWithName:@"ArialMT" size:fontSize];
+        cell.textLabel.text = @"System";
+        cell.textLabel.font = [UIFont systemFontOfSize:fontSize];
         break;
 
         case 1:
+        cell.textLabel.text = @"Arial";
+        cell.textLabel.font = [UIFont fontWithName:@"ArialMT" size:fontSize];
+        break;
+
+        case 2:
         cell.textLabel.text = @"Trebuchet";
         cell.textLabel.font = [UIFont fontWithName:@"TrebuchetMS" size:fontSize];
         break;
         
-        case 2:
+        case 3:
         cell.textLabel.text = @"Verdana";
         cell.textLabel.font = [UIFont fontWithName:@"Verdana" size:fontSize];
         break;
         
-        case 3:
+        case 4:
         cell.textLabel.text = @"Georgia";
         cell.textLabel.font = [UIFont fontWithName:@"Georgia" size:fontSize];
         break;
         
-        case 4:
+        case 5:
         cell.textLabel.text = @"Palatino";
         cell.textLabel.font = [UIFont fontWithName:@"Palatino-Roman" size:fontSize];
         break;
         
-        case 5:
+        case 6:
         cell.textLabel.text = @"Times New Roman";
         cell.textLabel.font = [UIFont fontWithName:@"TimesNewRomanPSMT" size:fontSize];
         break;
         
-        case 6:
+        case 7:
         cell.textLabel.text = @"Courier New";
         cell.textLabel.font = [UIFont fontWithName:@"CourierNewPSMT" size:fontSize];
         break;
@@ -151,30 +156,34 @@
     
     switch (indexPath.row) {
         case 0:
-        selectedFontFamily = ZSSFontFamilyDefault;
+        selectedFontFamily = ZSSFontFamilySystem;
         break;
-        
+
         case 1:
-        selectedFontFamily = ZSSFontFamilyTrebuchet;
+        selectedFontFamily = ZSSFontFamilyArial;
         break;
         
         case 2:
-        selectedFontFamily = ZSSFontFamilyVerdana;
+        selectedFontFamily = ZSSFontFamilyTrebuchet;
         break;
         
         case 3:
-        selectedFontFamily = ZSSFontFamilyGeorgia;
+        selectedFontFamily = ZSSFontFamilyVerdana;
         break;
         
         case 4:
-        selectedFontFamily = ZSSFontFamilyPalatino;
+        selectedFontFamily = ZSSFontFamilyGeorgia;
         break;
         
         case 5:
-        selectedFontFamily = ZSSFontFamilyTimesNew;
+        selectedFontFamily = ZSSFontFamilyPalatino;
         break;
         
         case 6:
+        selectedFontFamily = ZSSFontFamilyTimesNew;
+        break;
+        
+        case 7:
         selectedFontFamily = ZSSFontFamilyCourierNew;
         break;
         
