@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ZSSRichTextEditor"
-  s.version      = "0.5.2.2"
+  s.version      = "0.6.0.0"
   s.summary      = "ZSSRichTextEditor is a beautiful Rich Text WYSIWYG Editor for iOS."
 
   s.description  = <<-DESC

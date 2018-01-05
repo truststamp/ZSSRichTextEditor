@@ -198,6 +198,33 @@ static NSString * const ZSSRichTextEditorToolbarFonts = @"com.zedsaid.toolbarite
 - (void)dismissAlertView;
 
 /**
+ *  Gets called when the Text color picker button is tapped in an alertView
+ *
+ *  @warning The default implementation of this method returns NO
+ *  @return YES should be returned if alternate picker will be presented
+ */
+- (BOOL)showTextColorAlternatePicker;
+
+/**
+ *  Set text color
+ */
+- (void)setTextColor:(UIColor*)color;
+
+
+/**
+ *  Gets called when the Background color picker button is tapped in an alertView
+ *
+ *  @warning The default implementation of this method returns NO
+ *  @return YES should be returned if alternate picker will be presented
+ */
+- (BOOL)showBackgroundColorAlternatePicker;
+
+/**
+ *  Set background color
+ */
+- (void)setBackgroundColor:(UIColor*)color;
+
+/**
  *  Add a custom UIBarButtonItem by using a UIButton
  */
 - (void)addCustomToolbarItemWithButton:(UIButton*)button;

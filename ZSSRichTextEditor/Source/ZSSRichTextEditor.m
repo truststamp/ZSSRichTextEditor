@@ -1215,6 +1215,10 @@ static CGFloat kDefaultScale = 0.5;
     
     // Save the selection location
     [self.editorView stringByEvaluatingJavaScriptFromString:@"zss_editor.prepareInsert();"];
+
+    if ([self showTextColorAlternatePicker]) {
+        return;
+    }
     
     // Call the picker
     HRColorPickerViewController *colorPicker = [HRColorPickerViewController cancelableFullColorPickerViewControllerWithColor:[UIColor whiteColor]];
@@ -1225,10 +1229,18 @@ static CGFloat kDefaultScale = 0.5;
     
 }
 
+- (BOOL)showTextColorAlternatePicker {
+    return NO;
+}
+
 - (void)bgColor {
     
     // Save the selection location
     [self.editorView stringByEvaluatingJavaScriptFromString:@"zss_editor.prepareInsert();"];
+
+    if ([self showBackgroundColorAlternatePicker]) {
+        return;
+    }
     
     // Call the picker
     HRColorPickerViewController *colorPicker = [HRColorPickerViewController cancelableFullColorPickerViewControllerWithColor:[UIColor whiteColor]];
@@ -1237,6 +1249,10 @@ static CGFloat kDefaultScale = 0.5;
     colorPicker.title = NSLocalizedString(@"BG Color", nil);
     [self.navigationController pushViewController:colorPicker animated:YES];
     
+}
+
+- (BOOL)showBackgroundColorAlternatePicker {
+    return NO;
 }
 
 - (void)setSelectedColor:(UIColor*)color tag:(int)tag {
@@ -1250,6 +1266,14 @@ static CGFloat kDefaultScale = 0.5;
     }
     [self.editorView stringByEvaluatingJavaScriptFromString:trigger];
     
+}
+
+- (void)setTextColor:(UIColor *)color {
+    [self setSelectedColor:color tag:1];
+}
+
+- (void)setBackgroundColor:(UIColor *)color {
+    [self setSelectedColor:color tag:2];
 }
 
 - (void)undo:(ZSSBarButtonItem *)barButtonItem {
