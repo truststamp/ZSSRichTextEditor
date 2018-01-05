@@ -79,6 +79,11 @@ static NSString * const ZSSRichTextEditorToolbarFonts = @"com.zedsaid.toolbarite
 @property (nonatomic) BOOL alwaysShowToolbar;
 
 /**
+ *  If show keyboard button should be visible on toolbar
+ */
+@property (nonatomic) BOOL showHideKeyboardButton;
+
+/**
  * If the sub class recieves text did change events or not
  */
 @property (nonatomic) BOOL receiveEditorDidChangeEvents;
@@ -228,3 +233,4 @@ static NSString * const ZSSRichTextEditorToolbarFonts = @"com.zedsaid.toolbarite
 - (void)setCSS:(NSString *)css;
 
 @end
+
